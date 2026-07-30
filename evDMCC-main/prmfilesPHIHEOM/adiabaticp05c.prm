@@ -1,0 +1,63 @@
+# PHI test case
+# ----------------
+# Two level system
+# - Independent, uncorrelated diagonal bath coupling
+# - Time non-local truncation
+# - Variable coupling (in this file)
+# - this file in particular modified by acshinn
+# for use in work on Liouvillian dynamics
+#
+# N = 2
+# M = 2
+# L_T = 10
+# K = 0
+#Name of output file
+OutputFile=rmtadp05eta.txt
+#Standard verbosity
+verbose=1
+#Number of sites
+NumStates=2
+#Number of bath terms = number of sites 
+NumCouplingTerms=1
+#Temperature
+T=300
+#Hierarchy Truncation Level
+HierarchyTruncation=8
+#High Temp. Approx
+MatsubaraTerms=0
+#Use time local truncation
+TL=0
+#tolerance for rkf45 adaptive integration
+RKF45tolerance=1e-5
+#minimum timestep for rkf45 adaptive integration
+RKF45mindt=1e-6
+#Hamiltonian (cm^-1)
+#Note the Hamiltonian renormalization
+# sum_m=1^M |m><m|lambda[m] is NOT included
+# in the code. It is added to the Hamiltonian here
+Hamiltonian:
+2.6000,104.255000000
+104.255000000,-2.60000
+#Eigenvalues of Hamiltonian
+HamiltonianEigenvalues:
+-104.255,104.255
+HamiltonianEigenvectors:
+1,0
+0,1
+#initial density matrix
+InitialDensityMatrix:
+1.000000,0.000000
+0.000000,0.000000
+#correlated bath operator
+CorrelatedCouplingTerms:
+1,-1
+#bath response frequency (1/ps)
+gamma:
+4.91
+#reorganisation energy (cm^-1)
+lambda:
+5.212
+#timesteps in ps
+Timestep=1.000000E-03
+#total running time in ps
+Time=3.2
